@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Employee Directory</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="css/styles.css" />
+<script src="lib/jquery-1.8.2.min.js"></script>
+</head>
+    
+<body>
+<div id="fileData"></div>
+<script>
+$(document).ready(function(){
+$.ajax({
+            type: "GET",
+            url: "http://192.168.100.9/mobot/get_move.php",
+            dataType: "jsonp",
+            success: function (data) {
+                $('#fileData').html(data.val);
+				
+            },
+        });
+});
+</script>
+</body>
+</html>
